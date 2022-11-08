@@ -1,6 +1,9 @@
 import streamlit as st
 from streamlit_webrtc import webrtc_streamer
 import av
+import cv2
+from streamlit_webrtc import VideoProcessorBase, WebRtcMode, webrtc_streamer
+
 
 
 flip = st.checkbox("Flip")
@@ -14,6 +17,13 @@ def video_frame_callback(frame):
     return av.VideoFrame.from_ndarray(flipped, format="bgr24")
 
 
-webrtc_streamer(key="example", video_frame_callback=video_frame_callback, media_stream_constraints= {"video": 
-                                                                                {"width": {"ideal": 1920, "min": 1280}, 
-                                                                                "height": {"ideal": 1080, "min": 720}}})
+webrtc_streamer(key="example", video_frame_callback=video_frame_callback,
+                rtc_configuration={  # Add this config
+                "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+            },
+            async_processing=True,
+            media_stream_constraints={"video": 
+                                                {"width": {"min": 1280}, 
+                                                "height": {"min": 720}},
+                                        "audio": False,
+                                        })
