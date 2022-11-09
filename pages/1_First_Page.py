@@ -17,3 +17,5 @@ def video_frame_callback(frame):
 webrtc_streamer(key="example", video_frame_callback=video_frame_callback, media_stream_constraints= {"video": 
                                                                                 {"width": {"ideal": 1920, "min": 1280}, 
                                                                                 "height": {"ideal": 1080, "min": 720}}})
+
+                                                                                
