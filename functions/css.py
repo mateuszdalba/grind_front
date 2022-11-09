@@ -15,7 +15,7 @@ def include_custom_styling():
 
 
     #Custom CSS
-    with open('E:/grind_front/assets/styles.css') as f:
+    with open('assets/styles.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 def card(header, content, link, img='<p></p>'):

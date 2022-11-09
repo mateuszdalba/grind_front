@@ -1,12 +1,13 @@
 import streamlit as st
 from functions.css import include_custom_styling, card 
 
-st.set_page_config(page_title='Grind', page_icon="brain", layout="wide")
+st.set_page_config(page_title='Grind', page_icon=":shark:", layout="wide")
 
 include_custom_styling()
 
 
 header = st.container()
+
 
 #st.sidebar.header('Virtual Gym')
 
@@ -33,6 +34,7 @@ with row1:
             "Squats",
             "Learn how to make squats ..",
             "Gym",
+            #st.image('https://s3.amazonaws.com/prod.skimble/assets/1727358/image_iphone.jpg')
         )
     with r1_col2:
         card(
@@ -42,27 +44,39 @@ with row1:
         )
     with r1_col3:
         card(
-            "NLP",
-            "Detect positive, neutral or negative sentiment of a text based on a number of prepared datasets",
-            "NLP",
+            "Exercise1",
+            "Some XYZ exercies",
+            "#",
         )
 
 with row2:
     with r2_col1:
         card(
-            "Time Series",
-            "Visualize, understand and create an analytical model of a time series for your study",
-            "Time_Series",
+            "Exercise2",
+            "Some exerciess",
+            "#",
         )
     with r2_col2:
         card(
-            "Spatial",
-            "Investigate a GIS dataset with an interactive map and advanced geospatial analysis tools",
-            "Spatial",
+            "Exercise3",
+            "Exercise1Exercise1Exercise1Exercise1",
+            "#",
         )
     with r2_col3:
         card(
-            "Clustering",
-            "Determine the most relevant words using an unsupervised learning approach and wordclouds",
-            "Clustering",
+            "Exercise4",
+            "Exercise1Exercise1Exercise1Exercise1Exercise1Exercise1",
+            "#",
         )
+
+
+col1, col2, col3 = st.columns([1,6,1])
+
+with col1:
+    st.write("")
+
+with col2:
+    st.image('assets/westside_small.png')
+
+with col3:
+    st.write("")

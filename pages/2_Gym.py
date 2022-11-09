@@ -5,9 +5,11 @@ import numpy as np
 from threading import Thread
 from functions.utilities import calculate_angle
 from camera import WebcamStream
+from functions.css import include_custom_styling
 
+include_custom_styling()
 
-use_webcam = st.sidebar.button('Use Webcam')
+use_webcam = st.button('Use Webcam')
 
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
@@ -131,40 +133,13 @@ if use_webcam:
             except:
                 pass
 
-            #setup status box
-            #cv2.rectangle(image, (0,0), (225,73), (245,117,16), -1)
-        
-            #rep data
-            #cv2.putText(image, 'REPS', (15,12),
-            #            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,0), 1, cv2.LINE_AA)
-        
-            #cv2.putText(image, str(counter),
-            #            (10,60),
-            #               cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
-
          
             kpil_text.write(f"<h1 style='text-align: center; color:red;'>{str(counter)}</h1>", unsafe_allow_html=True)
                 
                 
-            #rep data
-        
-            #cv2.putText(image, 'STAGE', (65,12),
-            #        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,0), 1, cv2.LINE_AA)
-        
-            #cv2.putText(image, stage,
-            #        (60,60),
-            #        cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
-        
             # st.write('STAGE: ', stage)
             kpil2_text.write(f"<h1 style='text-align: center; color:red;'>{stage}</h1>", unsafe_allow_html=True)
         
-            #Technique
-            #cv2.putText(image, 'TECHNIQUE', (600,12),
-            #        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,0), 1, cv2.LINE_AA)
-        
-            #cv2.putText(image, technique,
-            #        (600,60),
-            #        cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
 
             #st.write('TECHNIQUE: ', technique)
             kpil3_text.write(f"<h1 style='text-align: center; color:red;'>{technique}</h1>", unsafe_allow_html=True)
