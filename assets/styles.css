@@ -1,0 +1,159 @@
+/* VARIABLES */
+
+:root{
+    --core-purple-1: #a100ff;
+    --core-purple-2: #7600c0;
+    --core-purple-3: #460073;
+
+    --accent-purple-1: #b455aa;
+    --accent-purple-2: #a055f5;
+    --accent-purple-3: #be82ff;
+    --accent-purple-4: #dcafff;
+    --accent-purple-5: #e6dcff;
+
+    --black: #000;
+    --dark-gray: #96968c;
+    --light-gray: #e6e6dc;
+    --white: #fff;
+
+    
+}
+
+
+.page-title{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/*RESETS*/
+
+/* Disable Main menu */
+#MainMenu{
+    visibility: hidden;
+} 
+
+/* Disable footer */
+footer{
+    visibility: hidden;
+}
+
+/* Disable header */
+header{
+    visibility: hidden;
+}
+
+/* Disable file selectbox label */
+.css-g461me.effi0qh3{
+    display: none;
+}
+
+/* Disable links to page sections */
+.css-bhbjxr.e16nr0p31{
+    visibility: hidden;
+}
+
+/* Reset links */
+a{
+    color: var(--white);
+}
+
+a:link { 
+    text-decoration: none; 
+    color: var(--white);
+}
+
+a:visited { 
+    text-decoration: none; 
+    color: var(--white);
+}
+
+a:hover { 
+    text-decoration: none; 
+    color: var(--white);
+}
+
+a:active { 
+    text-decoration: none; 
+    color: var(--white);
+}
+
+/* Basics */
+h1{
+    font-weight: 700;
+    font-family: 'Graphik';
+    color:#fff;
+}
+
+h3{
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+hr{
+    border-top: 5px solid var(--white);
+    border-radius: 10px;
+}
+
+/* Array */
+.css-1hnkwsx.edw49t13{
+    background-color: rgba(0, 0, 0, 0.4);
+    color: var(--white);
+    border-radius: 10px;
+    border: none;
+}
+
+/* CARD */
+.card{
+    width: 100%;
+    height: 20vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all .5s; /* Animation */
+    margin-top: 2vh;
+}
+
+.card-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.card-body{
+    overflow-y: auto;
+}
+
+.card-text{
+    font-size: 1rem;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------------- */
+
+/* MAIN */
+
+/* Main app background */
+.stApp{
+    
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(166deg, rgba(0,0,0,1) 0%, rgb(9, 26, 121) 74%, rgb(5, 15, 73) 100%);
+    background: -webkit-linear-gradient(166deg, rgba(0,0,0,1) 0%, rgb(9, 26, 121) 74%, rgb(5, 15, 73) 100%);
+    background: linear-gradient(166deg, rgba(0,0,0,1) 0%, rgb(9, 26, 121) 74%, rgb(5, 15, 73) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#a200ff",GradientType=1);
+    
+    /* 
+    background-color: var(--core-purple-3); 
+    */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.page-title{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e6e6dc;
+}
