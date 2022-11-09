@@ -3,7 +3,7 @@ import cv2, time
 import mediapipe as mp
 import numpy as np
 from threading import Thread
-from functions.utilities import calculate_angle
+from functions.utilities import calculate_angle, image_resize
 from camera import WebcamStream
 from functions.css import include_custom_styling
 
@@ -15,30 +15,6 @@ mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
 W, H = 1920, 1080
-
-
-# Resize Images to fit Container
-@st.cache()
-# Get Image Dimensions
-def image_resize(image, width=None, height=None, inter=cv2.INTER_AREA):
-    dim = None
-    (h,w) = image.shape[:2]
-
-    if width is None and height is None:
-        return image
-    if width is None:
-        r = width/float(w)
-        dim = (int(w*r),height)
-    else:
-        r = width/float(w)
-        dim = width, int(h*r)
-
-    # Resize image
-    resized = cv2.resize(image,dim,interpolation=inter)
-    return resized
-
-
-
 
 
 ## Get Video
