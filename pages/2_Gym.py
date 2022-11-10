@@ -7,32 +7,37 @@ from functions.utilities import calculate_angle, image_resize
 from camera import WebcamStream
 from functions.css import include_custom_styling
 
+st.set_page_config(page_title='Grind', page_icon=":shark:", layout="wide")
+
 include_custom_styling()
 
-use_webcam = st.button('Use Webcam')
+use_webcam = st.button('Start Training')
 
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
-W, H = 1920, 1080
-
-
 ## Get Video
-stframe = st.empty()
 
-kpil, kpil2, kpil3 = st.columns(3)
+col1, col2, col3 = st.columns([1, 1, 1])
 
-with kpil:
-    st.markdown('**Reps: **')
-    kpil_text = st.markdown('0')
+with col1:
+    st.markdown('<h1>Here is virtual gym <br> Ye it feel so good to train <br> online while COVID </h1>', unsafe_allow_html=True)
 
-with kpil2:
-    st.markdown('**Stage: **')
-    kpil2_text = st.markdown('None')
+with col2:
+    stframe = st.empty()
 
-with kpil3:
-    st.markdown('**Technique: **')
-    kpil3_text = st.markdown('None')
+with col3:
+    st.markdown('<h1>Reps</h1>', unsafe_allow_html=True)
+    kpil_text = st.markdown('<h1>0</h1>', unsafe_allow_html=True)
+
+    
+    st.markdown('<h1>Stage</h1>', unsafe_allow_html=True)
+    kpil2_text = st.markdown('<h1>None</h1>', unsafe_allow_html=True)
+
+    
+    st.markdown('<h1>Technique</h1>', unsafe_allow_html=True)
+    kpil3_text = st.markdown('<h1>None</h1>', unsafe_allow_html=True)
+
 
 if use_webcam:
     video = WebcamStream(stream_id=0)
@@ -110,15 +115,15 @@ if use_webcam:
                 pass
 
          
-            kpil_text.write(f"<h1 style='text-align: center; color:red;'>{str(counter)}</h1>", unsafe_allow_html=True)
+            kpil_text.write(f"<h1>{str(counter)}</h1>", unsafe_allow_html=True)
                 
                 
             # st.write('STAGE: ', stage)
-            kpil2_text.write(f"<h1 style='text-align: center; color:red;'>{stage}</h1>", unsafe_allow_html=True)
+            kpil2_text.write(f"<h1>{stage}</h1>", unsafe_allow_html=True)
         
 
             #st.write('TECHNIQUE: ', technique)
-            kpil3_text.write(f"<h1 style='text-align: center; color:red;'>{technique}</h1>", unsafe_allow_html=True)
+            kpil3_text.write(f"<h1>{technique}</h1>", unsafe_allow_html=True)
 
             #Rendering
             mp_drawing.draw_landmarks(image, results.pose_landmarks, mp_pose.POSE_CONNECTIONS,
@@ -135,5 +140,5 @@ if use_webcam:
                 
 
             frame_ = cv2.resize(image,(0,0), fx=0.8, fy=0.8)
-            frame = image_resize(image=frame_, width=640)
+            #frame = image_resize(image=frame_, width=500, height=1000)
             stframe.image(frame_, channels='RGB', use_column_width=True)

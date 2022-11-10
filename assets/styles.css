@@ -141,9 +141,9 @@ hr{
 .stApp{
     
     background: rgb(0,0,0);
-    background: -moz-linear-gradient(166deg, rgba(0,0,0,1) 0%, rgb(9, 26, 121) 74%, rgb(5, 15, 73) 100%);
-    background: -webkit-linear-gradient(166deg, rgba(0,0,0,1) 0%, rgb(9, 26, 121) 74%, rgb(5, 15, 73) 100%);
-    background: linear-gradient(166deg, rgba(0,0,0,1) 0%, rgb(9, 26, 121) 74%, rgb(5, 15, 73) 100%);
+    background: -moz-linear-gradient(166deg, rgba(0,0,0,1) 0%, rgb(148, 164, 252) 74%, rgb(156, 158, 156) 100%);
+    background: -webkit-linear-gradient(166deg, rgba(0,0,0,1) 0%, rgb(148, 164, 252) 74%, rgb(156, 158, 156) 100%);
+    background: linear-gradient(166deg, rgba(0,0,0,1) 0%, rgb(148, 164, 252) 74%, rgb(156, 158, 156) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#a200ff",GradientType=1);
     
     /* 

@@ -12,16 +12,18 @@ class WebcamStream:
         # opening video capture stream 
         self.vcap = cv2.VideoCapture(self.stream_id)
 
-        #self.vcap.set(cv2.CAP_PROP_FRAME_WIDTH, W)
-        #self.vcap.set(cv2.CAP_PROP_FRAME_HEIGHT, H)
+        self.vcap.set(3, 720)
+        self.vcap.set(4, 1280)
+        #self.vcap.set(cv2.CAP_PROP_FRAME_WIDTH, 500)
+        #self.vcap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1000)
         #self.vcap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
         #self.vcap.set(cv2.CAP_PROP_FPS, 30)
             
         # reading a single frame from vcap stream for initializing 
         self.grabbed , self.frame = self.vcap.read()
-        if self.grabbed is False :
-            print('[Exiting] No more frames to read')
-            exit(0)
+        #if self.grabbed is False :
+        #    print('[Exiting] No more frames to read')
+        #    exit(0)
         # self.stopped is initialized to False 
         self.stopped = True
         # thread instantiation  
@@ -71,7 +73,7 @@ class CustomSquats():
         #self.stopped = False
         #self.t.start()
 
-    def process(self, video):
+    def process(self, frame_in):
         i = 0
         #Curl counter
         counter = 0 
@@ -81,11 +83,13 @@ class CustomSquats():
         with self.mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
             prevTime = 0
 
-            while True:
-                if video.stopped is True:
-                    break
+            # while True:
+            #     if video.stopped is True:
+            #         break
             i +=1
-            frame = video.read()
+
+            #frame = video.read()
+            frame = frame_in
 
             print(frame.shape)
         
