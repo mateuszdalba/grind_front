@@ -12,8 +12,8 @@ class WebcamStream:
         # opening video capture stream 
         self.vcap = cv2.VideoCapture(self.stream_id)
 
-        self.vcap.set(3, 720)
-        self.vcap.set(4, 1280)
+        #self.vcap.set(3, 720)
+        #self.vcap.set(4, 1280)
         #self.vcap.set(cv2.CAP_PROP_FRAME_WIDTH, 500)
         #self.vcap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1000)
         #self.vcap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
